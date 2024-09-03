@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerability Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;  
+        }
+        html {
+            font-family: Poppins, sans-serif; /* Added fallback font */
+            color: #f0f0f0;
+        }
+        body {
+            min-height: 100vh;
+            background: #0b0d15;
+            color: #a2a5b3;
+            display: flex; /* Center the card */
+            align-items: center; /* Center the card */
+            justify-content: center; /* Center the card */
+        }
+        h2 {
+            color: white;
+        }
+        .container {
+            max-width: 800px; /* Adjusted width to be more like the original */
+            padding: 2em;
+            background: #1c1f2b;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+        }
+        .container::after, .container::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Updated to use transform for better support */
+            z-index: -1;
+            padding: 3px;
+            border-radius: 10px;
+            animation: 3s spin linear infinite;
+        }
+        .container::before {
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        @keyframes spin {
+            from {
+                --angle: 0deg;
+            }
+            to {
+                --angle: 360deg;
+            }
+        }
+        .section {
+            margin-bottom: 20px;
+            text-align: left; /* Align text to the left for a more readable format */
+        }
+        .section h3 {
+            color: #007BFF;
+        }
+        .section p {
+            margin: 5px 0;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Vulnerability Report</h2>
+
+        <div class="section" id="impact">
+            <h3>Impact</h3>
+            <p><strong>Description:</strong> What type of vulnerability is present? Describe how it can affect users, systems, or data.</p>
+            <p><strong>Affected Parties:</strong> Identify who is impacted (e.g., specific user groups, organizations, or systems). Explain the potential consequences of the vulnerability on these parties.</p>
+        </div>
+
+        <div class="section" id="patches">
+            <h3>Patches</h3>
+            <p><strong>Patch Status:</strong> Has a fix been released for the vulnerability? If so, specify the details.</p>
+            <p><strong>Recommended Versions:</strong> List the versions or releases where the issue has been addressed. Include instructions for upgrading and any relevant links or resources.</p>
+        </div>
+
+        <div class="section" id="workarounds">
+            <h3>Workarounds</h3>
+            <p><strong>Temporary Fixes:</strong> Are there any temporary measures or workarounds that users can implement to mitigate the vulnerability without applying a patch?</p>
+            <p><strong>Implementation:</strong> Provide detailed steps for implementing these workarounds, if applicable.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>Contact</h3>
+            <p>If you across a vulnerability or bug please refer to the manual above this text and email me at: <a href="mailto:brynleyportillo1@gmail.com">brynleyportillo1@gmail.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
